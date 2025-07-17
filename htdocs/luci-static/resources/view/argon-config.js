@@ -110,6 +110,16 @@ return view.extend({
 		o.datatype = 'ufloat';
 		o.default = '10';
 		o.rmempty = false;
+		o = s.option(form.Value, 'background_image', _('[Light mode] Background Image Path (inside dashboard)'),
+		    _('Relative path to image in /www/luci-static/argon/background/ (e.g. mybg.jpg)'));
+		o.default = '';
+		o.rmempty = true;
+
+		o = s.option(form.Value, 'background_image_dark', _('[Dark mode] Background Image Path (inside dashboard)'),
+		    _('Relative path to image in /www/luci-static/argon/background/ (e.g. darkbg.jpg)'));
+		o.default = '';
+		o.rmempty = true;
+
 
 		o = s.option(form.Button, '_save', _('Save settings'));
 		o.inputstyle = 'apply';
